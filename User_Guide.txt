@@ -1,0 +1,49 @@
+
+# Automated Invoice Processing System - User Guide
+
+## Overview
+This system helps automatically extract and store invoice details from PDF files downloaded from email or stored in a folder.
+
+## Features
+- Downloads invoice PDFs from email inbox.
+- Extracts key details: Invoice Number, Date, Amount, Vendor.
+- Saves extracted data to:
+  - Excel file (`invoices.xlsx`)
+  - SQLite database (`invoices.db`)
+- Simple GUI using Tkinter for user interaction.
+
+## How to Use
+
+### Step 1: Launch the App
+- Run the main GUI script:
+```bash
+python app_gui.py
+```
+
+### Step 2: Download and Process Invoices
+- Click the **"Download Invoices from Email"** button.
+- The app will:
+  1. Connect to your email.
+  2. Download emails with PDF attachments containing the word "invoice".
+  3. Extract invoice data from those PDFs.
+  4. Save data to Excel and SQLite.
+
+### Step 3: View Saved Data
+- Open `invoices.xlsx` to view the extracted data in Excel.
+- Or use any SQLite viewer to open `invoices.db`.
+
+## Folder Structure
+- `downloaded_invoices/`: Stores downloaded PDF invoices.
+- `invoices.xlsx`: Excel file storing extracted data.
+- `invoices.db`: SQLite database storing extracted data.
+
+## Dependencies
+Make sure to install required Python libraries:
+```bash
+pip install pandas openpyxl sqlite3 tkinter
+```
+
+## Troubleshooting
+- Ensure your email credentials are correctly configured.
+- Make sure required libraries are installed.
+- If invoices aren't detected, confirm that the files are valid PDFs with recognizable text.
